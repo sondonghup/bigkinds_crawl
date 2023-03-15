@@ -3,7 +3,7 @@ import argparse
 from bs4 import BeautifulSoup as bs
 import os
 
-def naver_news(page_num):
+def bigkinds(page_num):
     '''
     page_num : 페이지 번호
     '''
@@ -80,4 +80,4 @@ if __name__ == "__main__":
         os.mkdir("comments")
 
     for page_num in range(args.start, args.end, 1):
-        naver_news(page_num)
+        bigkinds(page_num)
