@@ -64,7 +64,7 @@ def bigkinds(page_num):
     results = response.json()
     for result in results['resultList']:
         reporter = result['BYLINE']
-        category = result['CATEGORY_NAMES']
+        category = bs(result['CATEGORY_NAMES'], 'html.parser').text
         title = result['TITLE']
         content = bs(result['CONTENT'], 'html.parser').text
         with open('comments/contents.tsv', 'a', encoding='utf-8')as f:
